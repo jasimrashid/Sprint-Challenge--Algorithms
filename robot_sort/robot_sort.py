@@ -96,17 +96,97 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
+        # 1. pick up first item
+        print('0', self._list)
+        # self.swap_item()
+        # check if list is sorted. if sorted place first item in the first position
+        # print(self.sorted())
+        # self.reset_position()
+        # print("1: ", self._list)
+        # self.swap_item()
+
+        # check if next value is greater, if so swap. else move position
+        # self.swap_item()
+        # if self.compare_item() == -1:
+        print('1', self._list)
+        print(self.sorted())
+        print('2', self._list)
+
+
+        # while self.sorted() == False:
+
+        #     while self.can_move_right():
+        #         # if self.sorted():
+        #         #     print
+        #         #     break
+        #         self.move_right()
+        #         # print(self._list,self._item)
+        #         if self.compare_item() == -1:
+        #             self.swap_left_right()
+        #     if self.can_move_right() == False:
+        #         self.swap_item()
+        #         self.reset_position()
+        #         self.swap_item()
+
+        print(self._list)
+
+
+        # 2. check if list is sorted. if sorted, do nothing
+        # else: begin sorting process. use bubble sort.
+
+        self.swap_left_right()
+
+
+
+
+        #3
+        
         pass
+
+    def sorted(self):
+        self.swap_item()
+        while self.can_move_right() == True:
+            self.move_right()
+            # print('ha')
+            print(self._item, self._list[self._position],self.compare_item())
+            if self.compare_item() == -1: #ascending
+                self.move_left
+                self.swap_item()
+                self.move_right
+            elif self.compare_item() == 1:
+                self.move_left()
+                self.swap_item()
+                return False
+        return True
+
+    def reset_position(self):
+        while self.can_move_left():
+            self.move_left()
+
+    def swap_left_right(self):
+        self.swap_item()
+        self.move_left()
+        self.swap_item()
+        self.move_right()
+        self.swap_item()
+
+
 
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    # l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    
+    # 1: pickup first item and check if all cards are sorted
+
+    l = [1, 2, 3]
 
     robot = SortingRobot(l)
+    # breakpoint()
+    # self.swap_item()
 
     robot.sort()
-    print(robot._list)
+    # print(robot._list)
+    # print(robot.sorted())
