@@ -20,3 +20,20 @@ For each increase in n, the number of recurions incrases by 1. Another way to lo
 
 
 
+Algorithm:
+1. Start from the top floor. Throw an egg. 
+
+Does it break?
+
+2. If NO: Then set f equal to the floor you threw it from.
+3. If YES: move down to the floor that is half of the number of floors you previously ascended/descended. 
+4. Throw the egg again. 
+Does it break?
+5. If NO: Move up by half the number of floors you previously descended/ascended
+6. If YES: repeat step 3
+Does it break?
+7. If NO: repeat step 5
+6. If YES: repeat step 3
+.....
+eventually you will converge to the floor from which the egg won't break if you throw the egg from it, but it will from the floor above. This will be your final value of f.
+
